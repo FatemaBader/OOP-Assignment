@@ -20,7 +20,9 @@ class Stage
     stroke(#2E1EF5);
     //ellipse(x,y,150,150);
     fill(0);
-    ellipse(x-5,y-5,170,170);
+    ellipse(x,y,180,180);
+    stroke(#2E1EF5);
+    ellipse(x,y,145,145);
     
   }
 }
