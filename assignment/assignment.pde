@@ -20,16 +20,14 @@ void setup()
   
 }
 
+//continuous happens
 void draw()
-{
-  //background(0);
-  
+{ 
   //Call methods
   grid.display();
   warning.display();
-  //fill(255);
   image(img, 360, 90, 20, 20);
-  //fill(255,0,0);
+  //fill(0);
   stage.display();
   
   
