@@ -15,7 +15,7 @@ void setup()
           //skull image
            img = loadImage("skeleton.jpg");
        
- stage= new Stage(450,250);
+ stage= new Stage(450,280);
  grid= new Grid (300,150,300, 590, height,300);
   
 }

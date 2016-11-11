@@ -18,6 +18,9 @@ class Stage
     //strokeWeight(5);
     //stroke(0,0,255);
     stroke(#2E1EF5);
-    ellipse(x,y,150,150);
+    //ellipse(x,y,150,150);
+    fill(0);
+    ellipse(x-5,y-5,170,170);
+    
   }
 }
