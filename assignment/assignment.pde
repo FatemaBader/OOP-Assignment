@@ -41,6 +41,10 @@ void draw()
   stroke(#8BDFFF);
   line(340,360,350,350);
   
-
+  //> sign
+  stroke(#8BDFFF);
+  line(560,350,570,360);
+  stroke(#8BDFFF);
+  line(570,360,560,370);
   
 }
