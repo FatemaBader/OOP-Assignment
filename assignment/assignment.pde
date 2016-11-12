@@ -1,7 +1,7 @@
 //declare object
 Sign warning;
 Stage stage;
-//Stage circle;
+Stage circle;
 Grid grid;
 
 PImage img;
@@ -18,7 +18,7 @@ void setup()
            img = loadImage("skeleton.jpg");
        
  stage= new Stage(450,280);
- //circle=new Stage(500,300);
+ circle=new Stage(500,300);
  grid= new Grid (300,150,300, 590, height,300);
   
 }
@@ -32,7 +32,7 @@ void draw()
   image(img, 360, 90, 20, 20);
   //fill(0);
   stage.display();
-  
+  circle.move();
   //warning.move();
   
   //< sign
