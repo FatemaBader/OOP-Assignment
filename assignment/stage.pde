@@ -36,5 +36,7 @@ class Stage
     fill(0);
     ellipse(x,y,130,130);
     
+    
+    
   }
 }

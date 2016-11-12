@@ -32,8 +32,15 @@ void draw()
   image(img, 360, 90, 20, 20);
   //fill(0);
   stage.display();
-  //circle.display();
-  
   
   //warning.move();
+  
+  //< sign
+  stroke(#8BDFFF);
+  line(340,360,350,370);
+  stroke(#8BDFFF);
+  line(340,360,350,350);
+  
+
+  
 }
