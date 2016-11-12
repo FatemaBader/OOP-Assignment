@@ -15,17 +15,26 @@ class Stage
   //cirle
   void display()
   {
-    //strokeWeight(5);
+    //strokeWeight(1);
     //stroke(0,0,255);
     stroke(#2E1EF5);
-    //ellipse(x,y,150,150);
-    fill(0);
-    ellipse(x,y,180,180);
-    fill(#FF3EBC);
-    arc(x, y, 180, 180, PI, PI+QUARTER_PI);
+    //lines of outter circle
+    
+    for(float k=PI*0.05; k<2*PI ; k+=PI*0.05+PI*0.05)
+    {
+      stroke(#2E1EF5);
+      fill(#1D1634);  //light shade
+      arc(450, 280, 200, 200, k-PI*0.05,k);
+    }
     fill(0);
     stroke(#2E1EF5);
-    ellipse(x,y,145,145);
+    ellipse(x,y,155,155);
+    
+    
+    fill(#FF3EBC);
+    arc(x, y, 155, 155, PI, PI+QUARTER_PI);
+    fill(0);
+    ellipse(x,y,130,130);
     
   }
 }

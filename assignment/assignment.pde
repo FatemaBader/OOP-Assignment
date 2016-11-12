@@ -10,6 +10,7 @@ void setup()
 {
   background(0);
   size(850,400);
+  smooth();
     
     //initialise object
   warning = new Sign(350,50);
