@@ -3,7 +3,6 @@ Sign warning;
 Stage stage;
 Stage circle;
 Grid grid;
-//test commit
 
 PImage img;
 
