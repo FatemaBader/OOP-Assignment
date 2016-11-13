@@ -33,4 +33,26 @@ class Speaker
      fill(0);
      ellipse(x1,y1,70,70);
   }
+  void circles()
+  {
+    fill(#202726);
+    ellipse(x1,y1,20,20);
+    
+    //black shade
+    fill(#0C0D46);
+    ellipse(x1,y1,5,5);
+    
+     fill(#33D9DE);  //light shade
+     arc(x1, y1, 5, 5, 0.5, PI*0.85);
+     for (float rad=2.826; rad<2*PI; rad+=.4)
+     {
+       //creating the series of light blue lines
+       fill(#0C0D46);
+       arc(x1, y1, 5, 5, rad, rad+000.4);
+       fill(#33D9DE);
+       arc(x1, y1, 5, 5, rad+000.4, rad+.8);
+     }
+     fill(0);
+     ellipse(x1,y1,2,2);
+  }
 }

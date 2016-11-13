@@ -6,6 +6,9 @@ Grid grid;
 //Point point;
 Speaker speaker;
 Speaker speaker2;
+//Speaker[] speaker= new Speaker
+Speaker[] circles=new Speaker[10];
+
 
 PImage img;
 
@@ -26,6 +29,14 @@ void setup()
  //point= new Point(450,330);
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
+ 
+ float posCX=30;
+ float posCY=50;
+ for (int i=0;i<10;i++)
+ {
+   circles[i]= new Speaker(posCX,posCY);
+   posCX+=20;
+ }
 }
 
 //continuous happens
@@ -40,6 +51,10 @@ void draw()
   //point.move();
   speaker.display();
   speaker2.display();
+  for (int i=0;i<10;i++)
+  {
+    circles[i].circles();
+  }
   
   //< sign
   stroke(#8BDFFF);
