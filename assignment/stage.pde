@@ -1,33 +1,17 @@
 class Stage
 {
   color c;
-  int x=0;
-  int y=0;
+  float x=0;
+  float y=0;
   
   
   
-  Stage(int x2,int y2)
+  Stage(float x2,float y2)
   {
     x=x2;
     y=y2;
   }
   
-  void move()
-  {
-    float x=440;
-    float y=330;
-    fill(255);
-    ellipse(x,y,10,10);
-    
-    if (keyPressed)
-    {
-      if(keyCode == LEFT)
-      {
-        x--;
-      }
-    }
-    
-  }
   //cirle
   void display()
   {
@@ -52,8 +36,10 @@ class Stage
     ellipse(x,y,155,155);
     
     
-    fill(#FF3EBC);
+    fill(#FF3EBC); //pink ring
     arc(x, y, 155, 155, PI, PI+QUARTER_PI);
+    fill(#37C1B9); //light blue ring
+    arc(x, y, 155, 155, 0, PI*.6);
     fill(0);
     ellipse(x,y,130,130);
     

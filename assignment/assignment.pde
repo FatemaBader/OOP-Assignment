@@ -3,6 +3,8 @@ Sign warning;
 Stage stage;
 Stage circle;
 Grid grid;
+Point point;
+Speaker speaker;
 
 PImage img;
 
@@ -20,7 +22,8 @@ void setup()
  stage= new Stage(450,280);
  circle=new Stage(500,300);
  grid= new Grid (300,150,300, 590, height,300);
-  
+ point= new Point(450,330);
+ speaker=new Speaker(400,300);
 }
 
 //continuous happens
@@ -32,8 +35,8 @@ void draw()
   image(img, 360, 90, 20, 20);
   //fill(0);
   stage.display();
-  circle.move();
-  //warning.move();
+  point.move();
+  speaker.display();
   
   //< sign
   stroke(#8BDFFF);
