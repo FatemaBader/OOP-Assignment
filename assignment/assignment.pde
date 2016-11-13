@@ -1,10 +1,11 @@
 //declare object
 Sign warning;
 Stage stage;
-Stage circle;
+//Stage circle;
 Grid grid;
-Point point;
+//Point point;
 Speaker speaker;
+Speaker speaker2;
 
 PImage img;
 
@@ -20,10 +21,11 @@ void setup()
            img = loadImage("skeleton.jpg");
        
  stage= new Stage(450,280);
- circle=new Stage(500,300);
+ //circle=new Stage(500,300);
  grid= new Grid (300,150,300, 590, height,300);
- point= new Point(450,330);
- speaker=new Speaker(400,300);
+ //point= new Point(450,330);
+ speaker=new Speaker(250,300);
+ speaker2=new Speaker(630,300);
 }
 
 //continuous happens
@@ -35,8 +37,9 @@ void draw()
   image(img, 360, 90, 20, 20);
   //fill(0);
   stage.display();
-  point.move();
+  //point.move();
   speaker.display();
+  speaker2.display();
   
   //< sign
   stroke(#8BDFFF);
