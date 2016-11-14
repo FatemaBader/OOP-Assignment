@@ -8,8 +8,8 @@ class Stage
   
   Stage(float x2,float y2)
   {
-    x=x2;
-    y=y2;
+    this.x=x2;
+    this.y=y2;
   }
   
   //cirle

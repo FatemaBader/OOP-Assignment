@@ -12,12 +12,12 @@ class Sign
    //constructor
    Sign( float x1, float y1)
    { 
-     c= color(#4D1A1D);   //red
-     c2=color(#980017); //darker shade
+     this.c= color(#4D1A1D);   //red
+     this.c2=color(#980017); //darker shade
      //xpos= width/2;
      //ypos= 0;
-     x=x1;
-     y=y1;
+     this.x=x1;
+     this.y=y1;
    }
    
    //functionality

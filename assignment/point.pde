@@ -6,8 +6,8 @@ class Point
   
   Point(float x, float y)
   {
-    posX=x;
-    posY=y;
+    this.posX=x;
+    this.posY=y;
   }
   
   void move()

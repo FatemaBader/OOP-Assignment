@@ -2,12 +2,13 @@
 Sign warning;
 Stage stage;
 //Stage circle;
+Clock clock;
 Grid grid;
 //Point point;
 Speaker speaker;
 Speaker speaker2;
 //Speaker[] speaker= new Speaker
-Speaker[] circles=new Speaker[10];
+//Speaker[] circles=new Speaker[10];
 
 
 PImage img;
@@ -29,20 +30,22 @@ void setup()
  //point= new Point(450,330);
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
+ clock=new Clock(30,100);
  
- float posCX=30;
- float posCY=50;
- for (int i=0;i<10;i++)
+ //float posCX=30;
+ //float posCY=50;
+ /*for (int i=0;i<10;i++)
  {
    circles[i]= new Speaker(posCX,posCY);
    posCX+=20;
- }
+ }*/
 }
 
 //continuous happens
 void draw()
-{ 
+{  
   //Call methods
+  clock.time();
   grid.display();
   warning.display();
   image(img, 360, 90, 20, 20);
@@ -51,10 +54,10 @@ void draw()
   //point.move();
   speaker.display();
   speaker2.display();
-  for (int i=0;i<10;i++)
+  /*for (int i=0;i<10;i++)
   {
     circles[i].circles();
-  }
+  }*/
   
   //< sign
   stroke(#8BDFFF);
