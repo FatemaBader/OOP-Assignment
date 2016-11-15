@@ -26,20 +26,26 @@ class Grid
     //fill(255);
     stroke(#2E1EF5); //blue shade
     strokeWeight(0);
+    //x =300
     float cursor = x;
    while(cursor<maxX)
     {
+      stroke(#2E1EF5);
       line(cursor,100,cursor,height-150);
       
       line(cursor,height-150,cursor-50,height-80);
       cursor+=20;
     }
     //y=150
-    while(y<maxY-100)
+    float cursony =y;
+    // maxY=height
+    float k=0;
+    while(cursony<(maxY-100))
     {
-      line(300,y-45, 580, y-45);
-      line(300-y+150,k-45+300, 580, k-45+300);
-      y+=20;
+      //stroke(255);
+      line(300,cursony-45, 580, cursony-45);
+      line(300-cursony+150,k-45+300, 580, k-45+300);
+      cursony+=20;
       k+=10;
     }
     

@@ -27,7 +27,8 @@ class Point
     //while ( posX<500 && posX>400 && posY>300 && posY<height)
     //{
     
-        if(keyCode == UP)
+        if(keyCode == UP && posY>220 )
+        //&& posX>400 && posY<290 && posY>height )
         {
           posY--;
          }

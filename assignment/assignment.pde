@@ -9,6 +9,7 @@ Speaker speaker;
 Speaker speaker2;
 //Speaker[] speaker= new Speaker
 //Speaker[] circles=new Speaker[10];
+Control[] controls=new Control[6];
 
 
 PImage img;
@@ -39,6 +40,10 @@ void setup()
    circles[i]= new Speaker(posCX,posCY);
    posCX+=20;
  }*/
+ for (int i=0;i<6;i++)
+ {
+   controls[i]=new Control(30,140);
+ }
 }
 
 //continuous happens
@@ -46,6 +51,7 @@ void draw()
 {  
   //Call methods
   background(0);
+  
   clock.time();
   grid.display();
   warning.display();
@@ -59,6 +65,10 @@ void draw()
   {
     circles[i].circles();
   }*/
+   for (int i=0;i<6;i++)
+  {
+    controls[i].display();
+  }
   
   //< sign
   stroke(#8BDFFF);
@@ -71,7 +81,16 @@ void draw()
   line(560,350,570,360);
   stroke(#8BDFFF);
   line(570,360,560,370);
+  
+  //lines above and below the time
+  stroke(#3C837D);
+  line(20,75,80,75);
+    stroke(#3C837D);
+  line(20,110,80,110);
 }
+
+
+
 
 void keyPressed() {
   point.move();
