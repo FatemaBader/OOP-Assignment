@@ -14,6 +14,7 @@ class Speaker
   void display()
   {
     fill(#202726);
+    stroke(#2B359D);
     ellipse(x1,y1,120,120);
     
     //black shade

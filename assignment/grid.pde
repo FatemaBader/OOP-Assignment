@@ -4,7 +4,7 @@ class Grid
   float y;
   float z;
   float k;
-  float h=300;
+  float h;
   float maxX;
   float maxY;
   
@@ -26,13 +26,13 @@ class Grid
     //fill(255);
     stroke(#2E1EF5); //blue shade
     strokeWeight(0);
-    
-   while(x<maxX)
+    float cursor = x;
+   while(cursor<maxX)
     {
-      line(x,100,x,height-150);
+      line(cursor,100,cursor,height-150);
       
-      line(x,height-150,x-50,height-80);
-      x+=20;
+      line(cursor,height-150,cursor-50,height-80);
+      cursor+=20;
     }
     //y=150
     while(y<maxY-100)
