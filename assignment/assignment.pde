@@ -11,6 +11,8 @@ Speaker speaker2;
 //Speaker[] circles=new Speaker[10];
 Control[] controls=new Control[6];
 
+Text hello;
+
 
 PImage img;
 
@@ -32,7 +34,7 @@ void setup()
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
  clock=new Clock(30,100);
- 
+ hello=new Text(10,60);
  //float posCX=30;
  //float posCY=50;
  /*for (int i=0;i<10;i++)
@@ -44,6 +46,7 @@ void setup()
  {
    controls[i]=new Control(30,140);
  }
+
 }
 
 //continuous happens
@@ -52,6 +55,8 @@ void draw()
   //Call methods
   background(0);
   
+
+  hello.display();
   clock.time();
   grid.display();
   warning.display();
