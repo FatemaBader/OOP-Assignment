@@ -3,16 +3,22 @@ class Control
   float x2;
   float y2;
   float k;
+  //float stopangle;
+  float xk;
+  float stop;
   
-  Control(float x,float y)
+  Control(float x,float y, float sa)
   {
     this.x2=x;
     this.y2=y;
     this.k=0;
+    this.stop=sa;
+    xk=k;
+   
   }
   
   void display()
-  {
+  { 
     //grey
     fill(#454D4D);
     stroke(#454D4D);
@@ -23,15 +29,14 @@ class Control
       ellipse(x2+140,y2,30,30);
       ellipse(x2+175,y2,30,30);
       
-      fill(#2DE0D0);
-      stroke(#2DE0D0);
-      float xk=k;
       
       //rotate(radians(xk));
       fill(#2DE0D0);
       stroke(#2DE0D0);
-      arc(x2,y2,30,30,xk,PI/2);
-      xk++;
+      
+      arc(x2,y2,30,30,xk,stop);
+
+      
       
             fill(#2DE0D0);
       stroke(#2DE0D0);
@@ -78,8 +83,23 @@ class Control
       stroke(0);
       ellipse(x2+35+35+35+35+35,y2,20,20);
       
-      
-      
   }
-
+  
+  void moveArc()
+  {
+    xk += 0.0349066;
+    stop += 0.0349066;
+    
+    //if (xk >= 2*PI)
+    //{
+    //  xk = k;
+    //}
+    
+    //if (stop >= 2*PI)
+    //{
+    //  stop = stopangle;
+    //}
+    //println(xk);
+  }
+//
 }

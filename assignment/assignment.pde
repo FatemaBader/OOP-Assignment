@@ -13,6 +13,13 @@ Control[] controls=new Control[6];
 
 Text hello;
 
+//sine wave
+float Btarget = 9.0;
+float A = 1.0;
+float K = 4.0;
+float B = 4.0;
+float t = 0.0;
+float step = 1;
 
 PImage img;
 
@@ -34,7 +41,7 @@ void setup()
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
  clock=new Clock(30,100);
- hello=new Text(10,60);
+ hello=new Text(10,60,10);
  //float posCX=30;
  //float posCY=50;
  /*for (int i=0;i<10;i++)
@@ -44,7 +51,8 @@ void setup()
  }*/
  for (int i=0;i<6;i++)
  {
-   controls[i]=new Control(30,140);
+   //1.57 in degrees
+   controls[i]=new Control(30,140,1.5708);
  }
 
 }
@@ -52,11 +60,16 @@ void setup()
 //continuous happens
 void draw()
 {  
+  //sine wave
+  Btarget=random(10, 15);
+  
+  waves();
   //Call methods
   background(0);
   
 
   hello.display();
+  hello.display2();
   clock.time();
   grid.display();
   warning.display();
@@ -73,6 +86,7 @@ void draw()
    for (int i=0;i<6;i++)
   {
     controls[i].display();
+    controls[i].moveArc();
   }
   
   //< sign
@@ -94,6 +108,31 @@ void draw()
   line(20,110,80,110);
 }
 
+//sine wave
+float wave(float x) {
+  return A*pow(K/(K+pow(x, 4)), K)*cos(B*x-t);
+}
+
+void waves()
+{
+  float lastx = 0.0;
+  float lasty = width/6;
+  for (float x=0; x<width/4; x+=step)
+  {
+    float tmpx = map(x, 0, 100, -2, 1);    
+    float tmpy = wave(tmpx);
+    float y = map(tmpy, -1, 1, height/4, 500);
+    fill(255);
+    stroke(255);
+    line(lastx, lasty, x, y);
+
+    lastx = x;
+    lasty = y;
+  }
+  t += 0.3;  
+  B += (Btarget-B)/10;
+
+}
 
 
 
