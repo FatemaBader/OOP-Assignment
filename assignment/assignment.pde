@@ -16,9 +16,9 @@ Text hello;
 //sine wave
 float Btarget = 9.0;
 float A = 1.0;
-float K = 4.0;
-float B = 4.0;
-float t = 0.0;
+float K = 6.0;
+float B = 6.0;
+float t = 2.0;
 float step = 1;
 
 PImage img;
@@ -61,23 +61,33 @@ void setup()
 void draw()
 {  
   //sine wave
+  background(0);
   Btarget=random(10, 15);
   
-  waves();
+  
   //Call methods
   background(0);
-  
-
+   stroke(#60E8E0);
+  fill(#60E8E0);
+  waves();
   hello.display();
+  
   hello.display2();
+  
   clock.time();
+  
   grid.display();
+  
   warning.display();
+  
   image(img, 360, 90, 20, 20);
   //fill(0);
   stage.display();
+  
   point.display();
+  
   speaker.display();
+  
   speaker2.display();
   /*for (int i=0;i<10;i++)
   {
@@ -110,18 +120,23 @@ void draw()
 
 //sine wave
 float wave(float x) {
+    stroke(#60E8E0);
+  fill(#60E8E0);
   return A*pow(K/(K+pow(x, 4)), K)*cos(B*x-t);
 }
 
 void waves()
 {
+  background(0);
+  stroke(#60E8E0);
+  fill(#60E8E0);
   float lastx = 0.0;
   float lasty = width/6;
-  for (float x=0; x<width/4; x+=step)
+  for (float x=0; x<width/6; x+=step)
   {
-    float tmpx = map(x, 0, 100, -2, 1);    
+    float tmpx = map(x, 0, 100, -2, 2);    
     float tmpy = wave(tmpx);
-    float y = map(tmpy, -1, 1, height/4, 500);
+    float y = map(tmpy, -10, -1, height/2, 60);
     fill(255);
     stroke(255);
     line(lastx, lasty, x, y);
@@ -130,7 +145,7 @@ void waves()
     lasty = y;
   }
   t += 0.3;  
-  B += (Btarget-B)/10;
+  B += (Btarget-B)/100;
 
 }
 
