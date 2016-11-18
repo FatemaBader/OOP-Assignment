@@ -12,6 +12,38 @@ Speaker speaker2;
 Control[] controls=new Control[6];
 
 Text hello;
+//radar
+Radar radar;
+float speed = 0.01; // How fast we want the radar to spin
+int trailLength = 50;  
+float theta = 0;
+float cx, cy;
+float radius = 200;
+void drawRadar1()
+{
+  stroke(0, 255, 0);
+  noFill();
+  // Draw the outside of the radar
+  ellipse(cx, cy, radius * 2, radius * 2);
+
+  // Make the line colour fade to 0 for each successive line we draw
+  float intensityChange = 255.0f / trailLength; 
+  
+  for(int i = 0 ; i < trailLength ; i ++) // Draw trailLength lines
+  {
+    float lineTheta = theta - (i * speed);
+    stroke(0, 0, 255 - (i * intensityChange));
+    float x = cx + sin(lineTheta) * radius;
+    float y = cy - cos(lineTheta) * radius;
+    line(cx, cy, x, y);
+    
+    // An arc might be an even better solution
+  }
+  theta += speed;
+}
+
+
+PGraphics pg;
 
 //sine wave
 float Btarget = 9.0;
@@ -25,6 +57,14 @@ PImage img;
 
 void setup()
 {
+  //radar
+  cx = width / 2;
+  cy = height / 2;
+  smooth();  
+  
+  radar=new Radar(450, 280, 60, -0.01f);  
+  pg = createGraphics(width, height);
+  
   background(0);
   size(850,400);
   smooth();
@@ -60,6 +100,9 @@ void setup()
 //continuous happens
 void draw()
 {  
+  //
+
+  
   //sine wave
   background(0);
   Btarget=random(10, 15);
@@ -85,7 +128,8 @@ void draw()
   stage.display();
   
   point.display();
-  
+  radar.update();
+  radar.render();
   speaker.display();
   
   speaker2.display();
@@ -131,12 +175,12 @@ void waves()
   stroke(#60E8E0);
   fill(#60E8E0);
   float lastx = 0.0;
-  float lasty = width/6;
-  for (float x=0; x<width/6; x+=step)
+  float lasty = width/2;
+  for (float x=6; x<width/5; x+=step)
   {
-    float tmpx = map(x, 0, 100, -2, 2);    
+    float tmpx = map(x, 0, 100, -6, 2);    
     float tmpy = wave(tmpx);
-    float y = map(tmpy, -10, -1, height/2, 60);
+    float y = map(tmpy, -3, 0, height/2, 60);
     fill(255);
     stroke(255);
     line(lastx, lasty, x, y);
@@ -145,7 +189,7 @@ void waves()
     lasty = y;
   }
   t += 0.3;  
-  B += (Btarget-B)/100;
+  B += (Btarget-B)/200;
 
 }
 
