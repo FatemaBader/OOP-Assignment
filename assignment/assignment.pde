@@ -19,6 +19,12 @@ Radiothree[] squaresthree=new Radiothree[18];
 //mini screen
 Miniscreen[][] circles=new Miniscreen[18][60];
 
+//lights
+Lights[][] lights=new Lights[2][12];
+
+//loading sign
+Loadingsign[] load=new Loadingsign[4];
+
 Text hello;
 //radar
 Radar radar;
@@ -39,6 +45,14 @@ float radposy3=325;
 //mini screen x and y starting points
 float minix=735;
 float miniy=50;
+
+//lights x and y starting points
+float lx=710;
+float ly=230;
+
+//loading signs starting points
+float ldx=714;
+float ldy=170;
 
 void drawRadar1()
 {
@@ -140,8 +154,21 @@ void setup()
    minix=735;
    miniy+=4;
  }
- 
- 
+ for(int j=0;j<12;j++)
+ {
+    for (int i=0;i<2;i++)
+   {
+     lights[i][j]=new Lights(lx,ly);
+     lx+=5;
+   }
+   lx=710;
+   ly+=5;
+ }
+  for (int i=0;i<4;i++)
+ {
+   load[i]=new Loadingsign(ldx,ldy);
+   ldy+=15;
+ }
 }
 
 //continuous happens
@@ -211,6 +238,21 @@ void draw()
       
     }
   }
+    //lights
+  for (int j=0;j<12;j++)
+  {
+        for (int i=0;i<2;i++)
+    {
+      lights[i][j].display();
+      
+    }
+  }
+  //loading signs
+   for (int i=0;i<4;i++)
+  {
+    load[i].display();
+  }
+  
   //< sign
   stroke(#8BDFFF);
   line(340,360,350,370);
