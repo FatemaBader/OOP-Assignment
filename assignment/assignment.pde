@@ -24,6 +24,8 @@ Lights[][] lights=new Lights[2][12];
 
 //loading sign
 Loadingsign[] load=new Loadingsign[4];
+Loadingsign[] load2=new Loadingsign[8];
+Loadingsign[] load3=new Loadingsign[7];
 
 Text hello;
 //radar
@@ -53,6 +55,10 @@ float ly=230;
 //loading signs starting points
 float ldx=714;
 float ldy=170;
+int ld2x=105;
+int ld2y=90;
+float ld3x=120;
+int ld3y=110;
 
 void drawRadar1()
 {
@@ -169,6 +175,17 @@ void setup()
    load[i]=new Loadingsign(ldx,ldy);
    ldy+=15;
  }
+    for (int i=0;i<8;i++)
+   {
+     load2[i]=new Loadingsign(ld2x,ld2y);
+     ld2x+=15;
+   }
+   for (int i=0;i<7;i++)
+   {
+     load3[i]=new Loadingsign(ld3x,ld3y);
+     ld3x+=15;
+   }
+ 
 }
 
 //continuous happens
@@ -252,6 +269,16 @@ void draw()
   {
     load[i].display();
   }
+  
+      for (int i=0;i<8;i++)
+     {
+       load2[i].display2();
+     }
+     for (int i=0;i<7;i++)
+     {
+       load3[i].display3();
+     }
+  
   
   //< sign
   stroke(#8BDFFF);
