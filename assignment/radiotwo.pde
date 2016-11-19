@@ -1,4 +1,4 @@
-class Radio
+class Radiotwo
 {
   float startX;
   float startY;
@@ -6,7 +6,7 @@ class Radio
   boolean locked = false;
   int boxSize=5;
   
-  Radio(float x,float y)
+  Radiotwo(float x,float y)
   {
     this.startX=x;
     this.startY=y;
@@ -14,7 +14,7 @@ class Radio
   
   void display()
   {
-    rect(startX,startY,2,5);
+    rect(startX,startY,2,10);
     
       // Test if the cursor is over the box 
     if (mouseX > startX-boxSize && mouseX < startX+boxSize && 

@@ -12,6 +12,7 @@ Speaker speaker2;
 Control[] controls=new Control[6];
 
 Radio[] squares=new Radio[20];
+Radiotwo[] squarestwo=new Radiotwo[20];
 Text hello;
 //radar
 Radar radar;
@@ -24,8 +25,8 @@ float radius = 200;
 //radio position
 float radposx=730;
 float radposy=300;
-//float radposx2=730;
-//float radposy2=315;
+float radposx2=730;
+float radposy2=310;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -106,6 +107,11 @@ void setup()
    squares[i]=new Radio(radposx,radposy);
    radposx+=5;
  }
+  for (int i=0;i<20;i++)
+ {
+   squarestwo[i]=new Radiotwo(radposx2,radposy2);
+   radposx2+=5;
+ }
 }
 
 //continuous happens
@@ -156,6 +162,10 @@ void draw()
    for (int i=0;i<20;i++)
   {
     squares[i].display();
+  }
+   for (int i=0;i<20;i++)
+  {
+    squarestwo[i].display();
   }
   //< sign
   stroke(#8BDFFF);
