@@ -27,6 +27,9 @@ Loadingsign[] load=new Loadingsign[4];
 Loadingsign[] load2=new Loadingsign[8];
 Loadingsign[] load3=new Loadingsign[7];
 
+//red sign
+Redsigns[] red=new Redsigns[3];
+
 Text hello;
 //radar
 Radar radar;
@@ -59,6 +62,10 @@ int ld2x=105;
 int ld2y=90;
 float ld3x=120;
 int ld3y=110;
+
+//redsigns
+float xcor=714;
+float ycor=60;
 
 void drawRadar1()
 {
@@ -185,7 +192,12 @@ void setup()
      load3[i]=new Loadingsign(ld3x,ld3y);
      ld3x+=15;
    }
- 
+     
+    for (int i=0;i<3;i++)
+   {
+     red[i]=new Redsigns(xcor,ycor);
+     ycor+=15;
+   }
 }
 
 //continuous happens
@@ -278,7 +290,11 @@ void draw()
      {
        load3[i].display3();
      }
-  
+    //redsigns
+      for (int i=0;i<3;i++)
+     {
+       red[i].display();
+     }
   
   //< sign
   stroke(#8BDFFF);
