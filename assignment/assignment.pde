@@ -11,6 +11,7 @@ Speaker speaker2;
 //Speaker[] circles=new Speaker[10];
 Control[] controls=new Control[6];
 
+Radio[] squares=new Radio[20];
 Text hello;
 //radar
 Radar radar;
@@ -19,6 +20,12 @@ int trailLength = 50;
 float theta = 0;
 float cx, cy;
 float radius = 200;
+
+//radio position
+float radposx=730;
+float radposy=300;
+//float radposx2=730;
+//float radposy2=315;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -94,7 +101,11 @@ void setup()
    //1.57 in degrees
    controls[i]=new Control(30,140,1.5708);
  }
-
+ for (int i=0;i<20;i++)
+ {
+   squares[i]=new Radio(radposx,radposy);
+   radposx+=5;
+ }
 }
 
 //continuous happens
@@ -142,7 +153,10 @@ void draw()
     controls[i].display();
     controls[i].moveArc();
   }
-  
+   for (int i=0;i<20;i++)
+  {
+    squares[i].display();
+  }
   //< sign
   stroke(#8BDFFF);
   line(340,360,350,370);
