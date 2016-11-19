@@ -11,9 +11,14 @@ Speaker speaker2;
 //Speaker[] circles=new Speaker[10];
 Control[] controls=new Control[6];
 
-Radio[] squares=new Radio[20];
-Radiotwo[] squarestwo=new Radiotwo[20];
-Radiothree[] squaresthree=new Radiothree[15];
+//radio lights up
+Radio[] squares=new Radio[25];
+Radiotwo[] squarestwo=new Radiotwo[25];
+Radiothree[] squaresthree=new Radiothree[18];
+
+//mini screen
+Miniscreen[][] circles=new Miniscreen[18][60];
+
 Text hello;
 //radar
 Radar radar;
@@ -24,12 +29,16 @@ float cx, cy;
 float radius = 200;
 
 //radio position
-float radposx=730;
+float radposx=710;
 float radposy=300;
-float radposx2=730;
+float radposx2=710;
 float radposy2=310;
-float radposx3=730;
+float radposx3=710;
 float radposy3=325;
+
+//mini screen x and y starting points
+float minix=730;
+float miniy=50;
 
 void drawRadar1()
 {
@@ -106,21 +115,33 @@ void setup()
    //1.57 in degrees
    controls[i]=new Control(30,140,1.5708);
  }
- for (int i=0;i<20;i++)
+ for (int i=0;i<25;i++)
  {
    squares[i]=new Radio(radposx,radposy);
    radposx+=5;
  }
-  for (int i=0;i<20;i++)
+  for (int i=0;i<25;i++)
  {
    squarestwo[i]=new Radiotwo(radposx2,radposy2);
    radposx2+=5;
  }
-   for (int i=0;i<15;i++)
+   for (int i=0;i<18;i++)
  {
    squaresthree[i]=new Radiothree(radposx3,radposy3);
    radposx3+=7;
  }
+ for(int j=0;j<60;j++)
+ {
+    for (int i=0;i<18;i++)
+   {
+     circles[i][j]=new Miniscreen(minix,miniy);
+     minix+=5;
+   }
+   minix=730;
+   miniy+=4;
+ }
+ 
+ 
 }
 
 //continuous happens
@@ -168,18 +189,28 @@ void draw()
     controls[i].display();
     controls[i].moveArc();
   }
-   for (int i=0;i<20;i++)
+   for (int i=0;i<25;i++)
   {
     squares[i].display();
   }
-   for (int i=0;i<20;i++)
+   for (int i=0;i<25;i++)
   {
     squarestwo[i].display();
   }
-     for (int i=0;i<15;i++)
+     for (int i=0;i<18;i++)
   {
     squaresthree[i].display();
   }
+  
+  //mini screen
+  for (int j=0;j<60;j++)
+  {
+        for (int i=0;i<18;i++)
+    {
+      circles[i][j].display();
+    }
+  }
+  
   //< sign
   stroke(#8BDFFF);
   line(340,360,350,370);
