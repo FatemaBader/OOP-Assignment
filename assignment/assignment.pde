@@ -37,7 +37,7 @@ float radposx3=710;
 float radposy3=325;
 
 //mini screen x and y starting points
-float minix=730;
+float minix=735;
 float miniy=50;
 
 void drawRadar1()
@@ -137,7 +137,7 @@ void setup()
      circles[i][j]=new Miniscreen(minix,miniy);
      minix+=5;
    }
-   minix=730;
+   minix=735;
    miniy+=4;
  }
  
@@ -208,9 +208,9 @@ void draw()
         for (int i=0;i<18;i++)
     {
       circles[i][j].display();
+      
     }
   }
-  
   //< sign
   stroke(#8BDFFF);
   line(340,360,350,370);
@@ -228,6 +228,18 @@ void draw()
   line(20,75,80,75);
     stroke(#3C837D);
   line(20,110,80,110);
+  
+  //line on right side of mini screen
+     stroke(#4882A5);
+    line(825,285,825,200);
+    
+      //line on left side of mini screen
+     stroke(#4882A5);
+    line(728,285,728,200);
+    
+       //line on bottom of mini screen
+     stroke(#4882A5);
+    line(715,295,830,295);
 }
 
 //sine wave
@@ -235,6 +247,8 @@ float wave(float x) {
     stroke(#60E8E0);
   fill(#60E8E0);
   return A*pow(K/(K+pow(x, 4)), K)*cos(B*x-t);
+ 
+ 
 }
 
 void waves()

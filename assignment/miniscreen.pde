@@ -11,8 +11,9 @@ class Miniscreen
   
   void display()
   {
-    stroke(#324279);
-    fill(#324279);
+    stroke(#061A5F);
+    fill(#061A5F);
     ellipse(minix,miniy,1,1);
   }
+  
 }
