@@ -33,11 +33,13 @@ Redsigns[] red=new Redsigns[3];
 Text hello;
 //radar
 Radar radar;
+Radar radar2;
 float speed = 0.01; // How fast we want the radar to spin
-int trailLength = 50;  
+int trailLength = 10;  
 float theta = 0;
 float cx, cy;
-float radius = 200;
+float cx2,cy2;
+float radius = 50;
 
 //radio position
 float radposx=710;
@@ -73,6 +75,7 @@ void drawRadar1()
   noFill();
   // Draw the outside of the radar
   ellipse(cx, cy, radius * 2, radius * 2);
+  ellipse(cx2, cy2, radius *2, radius *2);
 
   // Make the line colour fade to 0 for each successive line we draw
   float intensityChange = 255.0f / trailLength; 
@@ -110,7 +113,8 @@ void setup()
   cy = height / 2;
   smooth();  
   
-  radar=new Radar(450, 280, 60, -0.01f);  
+  radar=new Radar(250, 300, 30, -0.2f); 
+  radar2=new Radar(630,300,30, -0.2f);
   pg = createGraphics(width, height);
   
   background(0);
@@ -231,11 +235,15 @@ void draw()
   stage.display();
   
   point.display();
-  radar.update();
-  radar.render();
+  
   speaker.display();
   
   speaker2.display();
+  radar.update();
+  radar.render();
+  
+  radar2.update();
+  radar2.render();
   /*for (int i=0;i<10;i++)
   {
     circles[i].circles();

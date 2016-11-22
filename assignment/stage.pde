@@ -1,3 +1,5 @@
+float thetaARC = PI+1.2;
+float thetaARC2= PI/6;
 class Stage
 {
   color c;
@@ -37,11 +39,12 @@ class Stage
     
     
     fill(#FF3EBC); //pink ring
-    arc(x, y, 155, 155, PI, PI+QUARTER_PI);
+    arc(x, y, 155, 155, thetaARC , thetaARC + .9);
     fill(#37C1B9); //light blue ring
-    arc(x, y, 155, 155, 0, PI*.6);
+    arc(x, y, 155, 155, thetaARC2, thetaARC2 + 1.5);
     fill(0);
     ellipse(x,y,130,130);
-    
+    thetaARC += 0.1;
+    thetaARC2 += 0.1;
   }
 }

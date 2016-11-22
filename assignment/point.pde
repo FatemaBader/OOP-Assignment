@@ -32,7 +32,7 @@ class Point
         {
           posY--;
          }
-        if(keyCode== DOWN)
+        if(keyCode== DOWN )
         {
           posY++;
         }
