@@ -129,7 +129,7 @@ void setup()
  stage= new Stage(450,280);
  //circle=new Stage(500,300);
  grid= new Grid (300,150,300, 590, height,300);
- point= new Point(450,330);
+ point= new Point(450,320);
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
  clock=new Clock(30,100);
@@ -343,7 +343,6 @@ float wave(float x) {
  
  
 }
-
 void waves()
 {
   background(0);
@@ -369,9 +368,10 @@ void waves()
 }
 
 
-
 void keyPressed() {
+  //point.drawSquare();
   point.move();
+  
   //if (keyCode == UP)
   
     //println("move up");

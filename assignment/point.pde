@@ -3,11 +3,15 @@ class Point
   float posX;
   float posY;
   color c;
+  float startW;
+  float startH;
   
   Point(float x, float y)
   {
     this.posX=x;
     this.posY=y;
+    startW=40;
+    startH=40;
   }
 
   void display() {
@@ -20,33 +24,32 @@ class Point
   void move()
   {
    fill(255);
-
-    //ellipse(posX,posY,10,10);
-    ////450,330
-    ////stays in the range of the cirlce
-    //while ( posX<500 && posX>400 && posY>300 && posY<height)
-    //{
-    
-        if(keyCode == UP && posY>220 )
+      //450,320
+        if(keyCode == UP && posY>235 )
         //&& posX>400 && posY<290 && posY>height )
         {
           posY--;
          }
-        if(keyCode== DOWN )
+        if(keyCode== DOWN && posY<319 )
         {
           posY++;
         }
-        if(keyCode== LEFT)
+        if(keyCode== LEFT && posX>410)
         {
           posX--;
         }
-        if(keyCode== RIGHT)
+        if(keyCode== RIGHT && posX<490)
         {
           posX++;
         }
       
-    }
-    //ellipse(posX,posY,10,10);
-  
+   }
+   
+   void drawSquare()
+   {
+     rectMode(CENTER);
+     rect(posX,posY,startW,startH);
+     
+   }
   
 }
