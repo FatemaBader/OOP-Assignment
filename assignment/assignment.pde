@@ -15,6 +15,8 @@ Control[] controls=new Control[6];
 Radio[] squares=new Radio[25];
 Radiotwo[] squarestwo=new Radiotwo[25];
 Radiothree[] squaresthree=new Radiothree[18];
+Radiothree[] squarestwo2=new Radiothree[15];
+Radiothree[] squarestwo3=new Radiothree[15];
 
 //mini screen
 Miniscreen[][] circles=new Miniscreen[18][60];
@@ -46,6 +48,13 @@ float radposx=710;
 float radposy=300;
 float radposx2=710;
 float radposy2=310;
+//////////////////////////////
+float radposx22=50;
+float radposy22=330;
+/////////////////////////////
+float radposx23=60;
+float radposy23=280;
+
 float radposx3=710;
 float radposy3=325;
 
@@ -156,10 +165,20 @@ void setup()
    squarestwo[i]=new Radiotwo(radposx2,radposy2);
    radposx2+=5;
  }
+  for (int i=0;i<15;i++)
+ {
+   squarestwo2[i]=new Radiothree(radposx22,radposy22);
+   radposx22+=8;
+ }
    for (int i=0;i<18;i++)
  {
    squaresthree[i]=new Radiothree(radposx3,radposy3);
    radposx3+=7;
+ }
+    for (int i=0;i<15;i++)
+ {
+   squarestwo3[i]=new Radiothree(radposx23,radposy23);
+   radposx23+=7;
  }
  for(int j=0;j<60;j++)
  {
@@ -260,9 +279,17 @@ void draw()
   {
     squarestwo[i].display();
   }
+     for (int i=0;i<15;i++)
+  {
+    squarestwo2[i].display();
+  }
      for (int i=0;i<18;i++)
   {
     squaresthree[i].display();
+  }
+     for (int i=0;i<15;i++)
+  {
+    squarestwo3[i].display();
   }
   
   //mini screen
