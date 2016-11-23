@@ -359,6 +359,25 @@ void draw()
        //line on bottom of mini screen
      stroke(#4882A5);
     line(715,295,830,295);
+    
+    //left side radio lines
+    stroke(#20305F);
+    fill(#20305F);
+    line(80,265,40,265);
+    
+    strokeWeight(3);
+    fill(#20305F);
+    line(38,265,35,270);
+    strokeWeight(5);
+    fill(#20305F);
+    line(35,270,35,295);
+    
+    strokeWeight(3);
+    fill(#20305F);
+    line(35,295,40,300);
+    
+    stroke(#20305F);
+    line(40,300,80,300);
 }
 
 //sine wave
