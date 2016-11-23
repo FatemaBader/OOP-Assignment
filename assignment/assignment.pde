@@ -365,7 +365,14 @@ void draw()
     fill(#20305F);
     line(80,265,40,265);
     
+    //text
+    stroke(#766D6D);
+    fill(#766D6D);
+    text("BIO UNIT CAPACITY",85,270);
+    
+    //
     strokeWeight(3);
+    stroke(#20305F);
     fill(#20305F);
     line(38,265,35,270);
     strokeWeight(5);
@@ -378,6 +385,31 @@ void draw()
     
     stroke(#20305F);
     line(40,300,80,300);
+    
+    //
+  stroke(#20305F);
+    fill(#20305F);
+    line(80,310,40,310);
+    //text
+    stroke(#766D6D);
+    fill(#766D6D);
+    text("BIO UNIT",75,325);
+    
+    strokeWeight(3);
+      stroke(#20305F);
+    fill(#20305F);
+    line(38,310,35,315);
+    strokeWeight(5);
+    fill(#20305F);
+    line(35,315,35,350);
+    
+    strokeWeight(3);
+    fill(#20305F);
+    line(35,350,40,355);
+    
+    stroke(#20305F);
+    line(40,355,80,355);
+    
 }
 
 //sine wave
