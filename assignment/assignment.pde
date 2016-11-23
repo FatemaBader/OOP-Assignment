@@ -251,7 +251,6 @@ void draw()
    for (int i=0;i<6;i++)
   {
     controls[i].display();
-    controls[i].moveArc();
   }
    for (int i=0;i<25;i++)
   {

@@ -49,12 +49,24 @@ class Stage
     ellipse(x,y,110,110);
     fill(0);
     ellipse(x,y,100,100);
+    //black lines
     stroke(0);
     fill(0);
     line(450,345,450,330);
     line(450,215,450,230);
     line(385,273,400,273);
     line(500,273,515,273);
+    
+    stroke(#03006A);
+    fill(#03006A);
+    ellipse(x,y,60,60);
+    stroke(0);
+    fill(0);
+    ellipse(x,y,58,58);
+    
+    stroke(#1B2AC1);
+    fill(#1B2AC1);
+    line(400,320,410,315);
     thetaARC += 0.1;
     thetaARC2 += 0.1;
   }
