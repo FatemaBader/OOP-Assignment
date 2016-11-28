@@ -440,6 +440,13 @@ void draw()
     setGradientt(70, 226, 85, 3, t2, t1, X_AXIS);
     setGradienttt(70, 234, 30 ,3, w2, w1, X_AXIS);
     
+    //black line
+    stroke(0);
+    strokeWeight(0.5);
+    line(70,230,180,230);
+    line(70,225,180,225);
+    line(70,232,180,232);
+    
 stroke(0);
    fill(0);
    strokeWeight(25);
