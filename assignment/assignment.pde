@@ -78,6 +78,11 @@ int ld3y=110;
 float xcor=714;
 float ycor=60;
 
+// Lerp
+int X_AXIS = 2;
+color c1, c2;
+color t1, t2;
+color w1,w2;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -117,6 +122,14 @@ PImage img;
 
 void setup()
 {
+  //lerp colors
+  c1 = color(#21DBC1);
+  c2 = color(#ED2BD7);
+  t1 = color(#E8079D);
+  t2 = color(#E8079D);
+  w1 = color(#21DBC1);
+  w2 = color(#ED2BD7);
+  
   //radar
   cx = width / 2;
   cy = height / 2;
@@ -142,7 +155,7 @@ void setup()
  speaker=new Speaker(250,300);
  speaker2=new Speaker(630,300);
  clock=new Clock(30,100);
- hello=new Text(10,60,10);
+ hello=new Text(10,55,10);
  //float posCX=30;
  //float posCY=50;
  /*for (int i=0;i<10;i++)
@@ -226,7 +239,6 @@ void setup()
 //continuous happens
 void draw()
 {  
-  //
 
   
   //sine wave
@@ -410,8 +422,64 @@ void draw()
     stroke(#20305F);
     line(40,355,80,355);
     
+    stroke(0);
+    fill(0);
+    rect(0,50,10,800);
+    
+    stroke(#281981);
+    fill(#281981);
+    rect(70,220,100,18);
+    
+    //lerp
+    setGradient(70, 220, 70, 6, c2, c1, X_AXIS);
+    setGradientt(70, 226, 85, 3, t2, t1, X_AXIS);
+    setGradienttt(70, 234, 30 ,3, w2, w1, X_AXIS);
 }
+//lerp1
+void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) {
 
+  noFill();
+
+  
+  if (axis == X_AXIS) {  // Left to right gradient
+    for (int i = x; i <= x+w; i++) {
+      float inter = map(i, x, x+w, 0, 1);
+      color c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  }
+}
+//lerp2
+void setGradientt(int x, int y, float w, float h, color t1, color t2, int axis ) {
+
+  noFill();
+
+  
+  if (axis == X_AXIS) {  // Left to right gradient
+    for (int i = x; i <= x+w; i++) {
+      float inter = map(i, x, x+w, 0, 1);
+      color c = lerpColor(t1,t2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  }
+}
+//lerp3
+void setGradienttt(int x, int y, float w, float h, color w1, color w2, int axis ) {
+
+  noFill();
+
+  
+  if (axis == X_AXIS) {  // Left to right gradient
+    for (int i = x; i <= x+w; i++) {
+      float inter = map(i, x, x+w, 0, 1);
+      color c = lerpColor(w1,w2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  }
+}
 //sine wave
 float wave(float x) {
     stroke(#60E8E0);

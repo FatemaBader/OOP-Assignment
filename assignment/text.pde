@@ -4,6 +4,7 @@ class Text
   float tz;
   float nz;
   
+  //(10,60,10);
   Text(float x,float y,float n)
   {
     this.sz=x;
@@ -13,7 +14,7 @@ class Text
   void display()
   {
     //Hello Human How are you today?
-  textSize(15);
+  textSize(20);
   stroke(255);
   fill(255);
     text("Hello Human", sz,tz);

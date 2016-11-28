@@ -5,6 +5,7 @@ class Point
   color c;
   float startW;
   float startH;
+  float speed;
   
   Point(float x, float y)
   {
@@ -12,6 +13,7 @@ class Point
     this.posY=y;
     startW=40;
     startH=40;
+    speed=1;
   }
 
   void display() {
@@ -24,11 +26,12 @@ class Point
   void move()
   {
    fill(255);
+   
       //450,320
         if(keyCode == UP && posY>235 )
         //&& posX>400 && posY<290 && posY>height )
         {
-          posY--;
+          posY=posY-speed;
          }
         if(keyCode== DOWN && posY<319 )
         {

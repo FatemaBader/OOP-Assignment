@@ -34,7 +34,7 @@ class Clock
     
     textSize(20);
     fill(#144E7E);
-    text(count / 60, cposx+10, cposy);
+    text(count / 10, cposx+10, cposy);
     
     count++;
    if (frameCount % 60 == 0)
