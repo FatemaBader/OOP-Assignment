@@ -26,16 +26,22 @@ class Sign
         
        //shape
        stroke(c);
+       fill(c);
        line(x,y,540,50);
        stroke(c);
+       fill(c);
        line(x,y,320,110);
        stroke(c);
+       fill(c);
        line(320,110,325,125);
        stroke(c);
+       fill(c);
        line(325,125,560,125);
        stroke(c);
+       fill(c);
        line(560,125,565,110);
        stroke(c);
+       fill(c);
        line(565,110,540,50);
        stroke(c);
        triangle(345, 112, 390, 112, 368, 80);

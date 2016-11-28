@@ -80,9 +80,11 @@ float ycor=60;
 
 // Lerp
 int X_AXIS = 2;
+int Y_AXIS = 1;
 color c1, c2;
 color t1, t2;
 color w1,w2;
+color ll1,ll2;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -129,6 +131,8 @@ void setup()
   t2 = color(#E8079D);
   w1 = color(#21DBC1);
   w2 = color(#ED2BD7);
+  ll1 = color(0);
+  ll2 = color(#E0122A);
   
   //radar
   cx = width / 2;
@@ -258,7 +262,8 @@ void draw()
   clock.time();
   
   grid.display();
-  
+   //lerp warning
+   lerpwarning(315,45, 250 ,80, ll2, ll1, Y_AXIS);
   warning.display();
   
   image(img, 360, 90, 20, 20);
@@ -434,6 +439,34 @@ void draw()
     setGradient(70, 220, 70, 6, c2, c1, X_AXIS);
     setGradientt(70, 226, 85, 3, t2, t1, X_AXIS);
     setGradienttt(70, 234, 30 ,3, w2, w1, X_AXIS);
+    
+stroke(0);
+   fill(0);
+   strokeWeight(25);
+   line(307,90,340,20);
+stroke(0);
+   fill(0);
+   strokeWeight(25);
+   line(580,90,550,20);
+   strokeWeight(3);
+    //stroke(#4D1A1D);
+    //fill(#4D1A1D);
+   //warning.display();
+}
+//lerp warning sign
+void lerpwarning(int x, int y, float w, float h, color c1, color c2, int axis ) {
+
+  noFill();
+
+  if (axis == Y_AXIS) {  // Top to bottom gradient
+    for (int i = y; i <= y+h; i++) {
+      float inter = map(i, y, y+h, 0, 1);
+      color c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x+w, i);
+    }
+  }  
+  
 }
 //lerp1
 void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) {
