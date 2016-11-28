@@ -13,6 +13,8 @@ Control[] controls=new Control[6];
 
 //radio lights up
 Radio[] squares=new Radio[25];
+Radio[] squares2=new Radio[5];
+Radio[] squares3=new Radio[5];
 Radiotwo[] squarestwo=new Radiotwo[25];
 Radiothree[] squaresthree=new Radiothree[18];
 Radiothree[] squarestwo2=new Radiothree[15];
@@ -46,6 +48,11 @@ float radius = 50;
 //radio position
 float radposx=710;
 float radposy=300;
+////
+float radiox=35;
+float radioy=232;
+float radx=35;
+float rady=225;
 float radposx2=710;
 float radposy2=310;
 //////////////////////////////
@@ -85,6 +92,7 @@ color c1, c2;
 color t1, t2;
 color w1,w2;
 color ll1,ll2;
+color b1,b2;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -133,6 +141,8 @@ void setup()
   w2 = color(#ED2BD7);
   ll1 = color(0);
   ll2 = color(#E0122A);
+  b1 = color(0);
+  b2 = color(#0B2439);
   
   //radar
   cx = width / 2;
@@ -176,6 +186,16 @@ void setup()
  {
    squares[i]=new Radio(radposx,radposy);
    radposx+=5;
+ }
+ for (int i=0;i<5;i++)
+ {
+   squares2[i]=new Radio(radiox,radioy);
+   radiox+=5;
+ }
+ for (int i=0;i<5;i++)
+ {
+   squares3[i]=new Radio(radx,rady);
+   radx+=5;
  }
   for (int i=0;i<25;i++)
  {
@@ -292,6 +312,14 @@ void draw()
   {
     squares[i].display();
   }
+  for (int i=0;i<5;i++)
+  {
+    squares2[i].display();
+  }
+  for (int i=0;i<5;i++)
+  {
+    squares3[i].display();
+  }
    for (int i=0;i<25;i++)
   {
     squarestwo[i].display();
@@ -309,6 +337,9 @@ void draw()
     squarestwo3[i].display();
   }
   
+  
+   //lerp lerpmini
+   lerpmini(735,50, 85 ,230, b2, b1, Y_AXIS);
   //mini screen
   for (int j=0;j<60;j++)
   {
@@ -455,10 +486,26 @@ stroke(0);
    fill(0);
    strokeWeight(25);
    line(580,90,550,20);
+   strokeWeight(2);
+   stroke(0);
+   line(30,230,60,230);
    strokeWeight(3);
-    //stroke(#4D1A1D);
-    //fill(#4D1A1D);
-   //warning.display();
+   
+}
+//lerp lerpmini
+void lerpmini(int x, int y, float w, float h, color c1, color c2, int axis ) {
+
+  noFill();
+
+  if (axis == Y_AXIS) {  // Top to bottom gradient
+    for (int i = y; i <= y+h; i++) {
+      float inter = map(i, y, y+h, 0, 1);
+      color c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x+w, i);
+    }
+  }  
+  
 }
 //lerp warning sign
 void lerpwarning(int x, int y, float w, float h, color c1, color c2, int axis ) {
