@@ -12,5 +12,6 @@ Everying was procedurally drawn.
 Objects that appear similar are made from a single class.
 There is a mini screen located on the far right hand side of the screen, this contains
 data that would display to the user in a language only known by a human from the future.
+
 The central stage contains a point that can be controled symbolises the users current 
 location. The blue bars shine when the mouse hovers over each individual one.
