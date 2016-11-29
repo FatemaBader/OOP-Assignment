@@ -539,6 +539,30 @@ stroke(0);
    line(30,230,60,230);
    strokeWeight(3);
    
+   stroke(0);   String s = "Welcome to the year 3040.";
+fill(#23AFAC);
+textSize(7);
+text(s, 740, 50, 70, 70);  // Text wraps within text box
+   String ss = "#!/bin/bash";
+fill(#F70515);
+textSize(7);
+text(ss, 740, 80, 70, 70);  // Text wraps within text box
+
+   String st = "#Set a trap to detect bots at port 80";
+fill(#F70515);
+textSize(7);
+text(st, 740, 100, 70, 70);  // Text wraps within text box
+
+
+   String str = "<echo >/dev/tcp/localhost/$port/ &>/dev/null 100+( $(od -An -Nz -i /dev/random )";
+fill(#23AFAC);
+textSize(7);
+text(str, 740, 125, 70, 70);  // Text wraps within text box
+    String str2 = "<echo >/dev/tcp/localhost/$port/ &>/dev/null 100+( $(od -An -Nz -i /dev/random )";
+fill(#23AFAC);
+textSize(7);
+text(str2, 750, 190, 70, 70);  // Text wraps within text box
+   
 }
 void lerpwave(int x, int y, float w, float h, color wave1, color wave2, int axis ) {
 
