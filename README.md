@@ -1,8 +1,9 @@
 # OOP-Assignment
 
 Below you can find my assignment of what I invision a futuristic UI
-to look like
-.[![Video](http://img.youtube.com/vi/https://www.youtube.com/watch?v=7iUeoGh3f2E/0.jpg)](https://www.youtube.com/watch?v=7iUeoGh3f2E)
+to look like.
+
+[![Video](http://img.youtube.com/vi/https://www.youtube.com/watch?v=7iUeoGh3f2E/0.jpg)](https://www.youtube.com/watch?v=7iUeoGh3f2E)
 My assignment includes lots of animation, rotating arcs, modified sin wave,
 and moving text.
 I used colours that work well together to enhance the overall look of
