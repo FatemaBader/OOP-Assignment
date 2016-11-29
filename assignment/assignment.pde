@@ -22,6 +22,8 @@ Radiothree[] squarestwo3=new Radiothree[15];
 
 //mini screen
 Miniscreen[][] circles=new Miniscreen[18][60];
+Miniscreen[][] circles2=new Miniscreen[10][40];
+Miniscreen[][] circles3=new Miniscreen[4][1];
 
 //lights
 Lights[][] lights=new Lights[2][12];
@@ -68,6 +70,10 @@ float radposy3=325;
 //mini screen x and y starting points
 float minix=735;
 float miniy=50;
+float minixx=650;
+float miniyy=50;
+float minx=680;
+float miny=235;
 
 //lights x and y starting points
 float lx=710;
@@ -224,11 +230,31 @@ void setup()
  {
     for (int i=0;i<18;i++)
    {
-     circles[i][j]=new Miniscreen(minix,miniy);
+     circles[i][j]=new Miniscreen(minix,miniy,1);
      minix+=5;
    }
    minix=735;
    miniy+=4;
+ }
+ for(int j=0;j<40;j++)
+ {
+    for (int i=0;i<10;i++)
+   {
+     circles2[i][j]=new Miniscreen(minixx,miniyy,2);
+     minixx+=5;
+   }
+   minixx=650;
+   miniyy+=8;
+ }
+ for(int j=0;j<1;j++)
+ {
+    for (int i=0;i<4;i++)
+   {
+     circles3[i][j]=new Miniscreen(minx,miny,2);
+     minx+=5;
+   }
+   minx=680;
+   miny+=8;
  }
  for(int j=0;j<12;j++)
  {
@@ -352,6 +378,22 @@ void draw()
         for (int i=0;i<18;i++)
     {
       circles[i][j].display();
+      
+    }
+  }
+  for (int j=0;j<23;j++)
+  {
+        for (int i=0;i<10;i++)
+    {
+      circles2[i][j].display();
+      
+    }
+  }
+  for (int j=0;j<1;j++)
+  {
+        for (int i=0;i<4;i++)
+    {
+      circles3[i][j].display();
       
     }
   }
