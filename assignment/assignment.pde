@@ -93,6 +93,7 @@ color t1, t2;
 color w1,w2;
 color ll1,ll2;
 color b1,b2;
+color wave1,wave2;
 void drawRadar1()
 {
   stroke(0, 255, 0);
@@ -143,6 +144,8 @@ void setup()
   ll2 = color(#E0122A);
   b1 = color(0);
   b2 = color(#0B2439);
+  wave1 = color(0);
+  wave2 = color(#5880E0);
   
   //radar
   cx = width / 2;
@@ -265,15 +268,18 @@ void draw()
 {  
 
   
+  lerpwave(50, 20, 40, 20, wave2, wave1, X_AXIS);
   //sine wave
   background(0);
   Btarget=random(10, 15);
-  
   
   //Call methods
   background(0);
    stroke(#60E8E0);
   fill(#60E8E0);
+  //lerp wave
+  
+  
   waves();
   hello.display();
   
@@ -492,6 +498,20 @@ stroke(0);
    strokeWeight(3);
    
 }
+void lerpwave(int x, int y, float w, float h, color wave1, color wave2, int axis ) {
+
+  noFill();
+
+  
+ if (axis == X_AXIS) {  // Left to right gradient
+    for (int i = x; i <= x+w; i++) {
+      float inter = map(i, x, x+w, 0, 1);
+      color c = lerpColor(wave1, wave2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  }
+}
 //lerp lerpmini
 void lerpmini(int x, int y, float w, float h, color c1, color c2, int axis ) {
 
@@ -577,7 +597,10 @@ float wave(float x) {
 }
 void waves()
 {
-  background(0);
+  //background(0);
+  
+  lerpwave(100, 40, 150, 30, wave2, wave1, X_AXIS);
+  lerpwave(10, 40, 120, 30, wave1, wave2, X_AXIS);
   stroke(#60E8E0);
   fill(#60E8E0);
   float lastx = 0.0;
